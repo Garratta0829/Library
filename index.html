@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Library</title>
+    <link rel="stylesheet" href="library.css">
+</head>
+<body>
+    <button data-modal-target="#modal" class="add-button">Add</button>
+    <p>hello world</p>
+
+    <div id="modal" class="modal">
+        <div class="modal-header">
+            <div class="modal-title">Add Book</div>
+            <button class="modal-close">&times;</button>
+        </div>
+        
+        <form class="modal-container" action="" id="dialog">
+            <div class="modal-item">
+                <label for="modal-book" class="modal-label">Title</label>
+                <input type="text" class="modal-input">
+            </div>
+            <div class="modal-item">
+                <label for="modal-author" class="modal-label">Author</label>
+                <input type="text" class="modal-input">
+            </div>
+            <div class="modal-item">
+                <label for="modal-pages" class="modal-label">Pages</label>
+                <input type="text" class="modal-input">
+            </div>
+            <div class="modal-item">
+                <label for="modal-book" class="modal-label">Title</label>
+                <input type="text" class="modal-input">
+            </div>
+        </form>
+       
+    </div>
+
+
+
+    <script src="library.js"></script>
+</body>
+</html>
