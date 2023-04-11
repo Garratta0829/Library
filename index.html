@@ -8,9 +8,18 @@
     <link rel="stylesheet" href="library.css">
 </head>
 <body>
-    <button data-modal-target="#modal" class="add-button">Add</button>
-    <p>hello world</p>
-
+    <div class="header">
+        <h1 class="project-header">Library</h1>
+        <button data-modal-target="#modal" class="add-button">Add</button>
+    </div>
+    <div class="body">
+        <!-- <div class="book">
+            <p>hobbit</p>
+            <p>hello</p>
+            <p>pages</p>
+        </div> -->
+    </div>
+   
     <div id="modal" class="modal">
         <div class="modal-header">
             <div class="modal-title">Add Book</div>
@@ -20,21 +29,23 @@
         <form class="modal-container" action="" id="dialog">
             <div class="modal-item">
                 <label for="modal-book" class="modal-label">Title</label>
-                <input type="text" class="modal-input">
+                <input type="text" class="input title-input">
             </div>
             <div class="modal-item">
                 <label for="modal-author" class="modal-label">Author</label>
-                <input type="text" class="modal-input">
+                <input type="text" class="input author-input">
             </div>
             <div class="modal-item">
                 <label for="modal-pages" class="modal-label">Pages</label>
-                <input type="text" class="modal-input">
+                <input type="text" class="input pages-input">
             </div>
             <div class="modal-item">
                 <label for="modal-book" class="modal-label">Title</label>
                 <input type="text" class="modal-input">
             </div>
+            <!-- <input type="submit" class="add-book"> -->
         </form>
+        <button class="add-book">Add Book</button>
        
     </div>
 
