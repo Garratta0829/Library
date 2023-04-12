@@ -43,36 +43,50 @@ function closeModal(modal) {
 
 
 
-addBook.addEventListener('click', () => {
+form.addEventListener('submit', function() {
+    event.preventDefault()
+    createBook()
+})
+
+function createBook() {
     title = titleInput.value
     author = authorInput.value
     pages = pagesInput.value
-    const book = new Book(title, author, pages)
-    myLibrary.push(book)
+   
+   new Book(title, author, pages)
+    // myLibrary.push(book)
     console.log(myLibrary)
     renderLibrary(myLibrary)
     modal.classList.remove('active')
-})
+    form.reset()
+}
 
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages
     this.read = read
+    // this.id = id
+    myLibrary.push(this)
 }
 
-function renderLibrary(myLibrary) {
-    
-    for (let i = 0; i < myLibrary.length; i++) {
-        const div = document.createElement('div')
-        div.innerHTML = `${title} ${author} ${pages}`
-        div.style.border = '1px solid black'
 
-    body.appendChild(div)
+function renderLibrary(myLibrary) {
+    body.innerHTML = ''
+    for (let i = 0; i < myLibrary.length; i++) {
+            let book = myLibrary[i]
+            const div = document.createElement('div')
+            div.innerHTML = `${book.title} ${book.author} ${book.pages}`
+            div.style.border = '1px solid black'
+            div.style.height = '400px'
+    
+        body.appendChild(div)
+        }
+
     }
     
     
-}
+
 
 
 
