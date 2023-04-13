@@ -6,15 +6,12 @@ const addBook = document.querySelector('.add-book')
 const titleInput = document.querySelector('.title-input')
 const authorInput = document.querySelector('.author-input')
 const pagesInput = document.querySelector('.pages-input')
+const body = document.querySelector('.body')
 let title = titleInput.value
 let author = authorInput.value
 let pages = pagesInput.value
-
-const body = document.querySelector('.body')
-
-
-
 let myLibrary = []
+
 
 addButton.addEventListener('click', () => {
     openModal(modal)
@@ -25,7 +22,6 @@ closeButton.addEventListener('click', () => {
 })
 
 function openModal(modal) { 
-    // if (modal == null) return
     modal.classList.add('active')
 }
 
@@ -33,29 +29,18 @@ function closeModal(modal) {
     modal.classList.remove('active')
 }
 
-// addBook.addEventListener('click', newBook )
-
-// function newBook(title, author, pages) {
-//     console.log(Book(title, author, pages))
-    
-//    console.log(new Book)
-// }
-
-
-
 form.addEventListener('submit', function() {
     event.preventDefault()
-    createBook()
+    addBookToLibrary()
 })
 
-function createBook() {
+function addBookToLibrary() {
     title = titleInput.value
     author = authorInput.value
     pages = pagesInput.value
    
    new Book(title, author, pages)
-    // myLibrary.push(book)
-    console.log(myLibrary)
+    // console.log(myLibrary)
     renderLibrary(myLibrary)
     modal.classList.remove('active')
     form.reset()
@@ -76,36 +61,49 @@ function renderLibrary(myLibrary) {
     for (let i = 0; i < myLibrary.length; i++) {
             let book = myLibrary[i]
             const div = document.createElement('div')
-            div.innerHTML = `${book.title} ${book.author} ${book.pages}`
-            div.style.border = '1px solid black'
-            div.style.height = '400px'
-    
+            div.classList.add('card')
+            div.innerHTML = `
+                <div class="card-container">
+                    <h1 class="card-item card-title">${book.title}</h1>
+                    <h1 class="card-item card-author">by ${book.author}</h1>
+                    <h1 class="card-item card-pages">${book.pages} pages</h1>
+                </div>`
+            const readButton = document.createElement('button') 
+            readButton.innerHTML = 'Not read'
+            readButton.classList.add('modal-button')
+            readButton.onclick = 
+            
+            () => {
+                if (readButton.innerHTML === 'Not read') {
+                    readButton.innerHTML = 'Read'
+                } else if (readButton.innerHTML === 'Read') {
+                    readButton.innerHTML = "Not read"
+                }
+               
+            }
+            div.appendChild(readButton)
+            const deleteButton = document.createElement('button')
+            deleteButton.innerHTML = 'Delete'
+            deleteButton.classList.add('modal-button')
+            div.appendChild(deleteButton)
         body.appendChild(div)
         }
 
     }
+
+    function removeBook(index) {
+        myLibrary.splice(index,)
+    }
     
+
+    // function toggleButton() {
+    //     if (readButton.innerHTML === 'Not read') {
+    //         readButton.innerHTML = 'Read'
+    //     } else if (readButton.innerHTML === 'Read') {
+    //         readButton.innerHTML = "Not read"
+    //     }
+        
+    // }
     
 
 
-
-
-
-// const div = document.createElement('div')
-// div.innerHTML = 'Im a div'
-// div.style.border = '1px solid black'
-
-// body.appendChild(div)
-
-// const div2 = document.createElement('div')
-// div2.innerHTML = 'Im a div'
-// div2.style.border = '1px solid black'
-
-// body.appendChild(div2)
-
-// const div3 = document.createElement('div')
-// div3.innerHTML = 'Im a div'
-// div3.style.border = '1px solid black'
-// div3.style.height = '400px'
-
-// body.appendChild(div3)
