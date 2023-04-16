@@ -167,3 +167,10 @@ body {
     font-size: 1rem;
     margin-top: 25px;
 }
+
+.remove-button {
+    width: 100px;
+    height: 20px;
+    background-color: rgb(57, 44, 87);
+    color: white;
+}
