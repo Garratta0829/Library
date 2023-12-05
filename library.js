@@ -38,6 +38,7 @@ form.addEventListener('submit', function() {
     addBookToLibrary()
 })
 
+
 function addBookToLibrary() {
     title = titleInput.value
     author = authorInput.value
@@ -50,6 +51,7 @@ function addBookToLibrary() {
     modal.classList.remove('active')
     form.reset()
 }
+
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -76,39 +78,8 @@ function renderLibrary(myLibrary) {
                     <button class="modal-button" onclick="toggleRead(${i})">Toggle</button>
                 </div>
                 `
-            // const readButton = document.createElement('button') 
-            // if (book.read) {
-            //     readButton.innerHTML = 'Read'
-            // } else {
-            //     readButton.innerHTML = 'Unread'
-            // }
-            
-          
-            // readButton.classList.add('modal-button')
-            // readButton.onclick = 
-            
-            // () => {
-            //     if (!book.read) {
-            //         readButton.innerHTML = 'Read'
-            //         readStatus.innerHTML = 'Read'
-            //         toggleRead(myLibrary[i])
-            //     } else if (book.read) {
-            //         readButton.innerHTML = 'Unread'
-            //         toggleRead(myLibrary[i])
-            //     }
-              
-            // }
-            // div.appendChild(readButton)
-            // const deleteButton = document.createElement('button')
-            // deleteButton.innerHTML = 'Delete'
-            // deleteButton.classList.add('modal-button')
-            // deleteButton.onclick = () => {
-            //     removeBook(i)
-            // }
-            // div.appendChild(deleteButton)
         body.appendChild(div)
         }
-
     }
 
     Book.prototype.toggleRead = function () {
